@@ -2,7 +2,7 @@ import random
 
 positions = ['1st', '2nd', '3rd', '4th','5th', '6th', '7th']
 
-#run easy
+#The game logic is handled here for any difficulty
 def game(max_guess_trials, max_guess_val):
     answer = random.randint(1,max_guess_val)
     i=0
@@ -38,6 +38,7 @@ def game(max_guess_trials, max_guess_val):
     print("\t The right answer was: %d"%answer)
     return False
 
+#This returns the selection menu the users
 def intro_and_menu():
     out = "This game has three difficulty levels below\n"
     out+= "Enter the text in the <> brackets to select your difficulty\n\n"
@@ -48,7 +49,7 @@ def intro_and_menu():
 
 
 
-
+#The main logic
 
 if __name__ == "__main__":
     
@@ -56,6 +57,7 @@ if __name__ == "__main__":
     print('********************************************************************')
     print('------------------------NUMBER GUESSING GAME------------------------')
 
+    #GEt the desired difficulty level
     valid_entry = {'EASY':'Easy', 'MED':'Medium', 'HARD':'Hard'}
     
     print(intro_and_menu())
@@ -71,6 +73,7 @@ if __name__ == "__main__":
     max_trials = {'EASY':6, 'MED':4, 'HARD': 3}
     max_range = {'EASY':10, 'MED':20, 'HARD': 50}
 
+    #start the game
     print('*************************************************************************')
     print('THE GAME STARTS NOW:\t\t\t DIFFICULTY: %s \n'%valid_entry[raw])
     win_out = game(max_trials[raw],max_range[raw])
